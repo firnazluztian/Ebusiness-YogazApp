@@ -1,0 +1,79 @@
+body {
+	margin: 0;
+	padding: 0;
+}
+
+#logo-img {
+	width: 30px;
+	height: 30px;
+	border-radius: 5px;
+}
+
+#logo-img:hover {
+	border: 2px solid black;
+}
+
+
+/* NAVIGATION */
+nav {
+	text-align: center;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+nav #nav-buttons button {
+
+}
+
+/* SLIDER */
+.carousel {
+	
+}
+
+.carousel img {
+	width: 100%;
+	height: auto;
+}
+
+/* SLIDER caption box */
+.carousel-caption {
+	bottom: 20%;
+	border-radius: 10px;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+/* FOOTER */
+footer {
+	text-align: center;
+	height: 100%;
+	width: 100%;
+	padding: 0px;
+	color: black;
+	background-color: white;
+}
+
+footer a {
+	color: black;
+	bottom: 0px;
+}
+
+/* RESPONSIVE DESIGN WHEN SCREEN SIZE IS SMALLER THAN 880px */
+@media screen and (max-width: 770px) {
+	.container {
+    	width: 100%;
+  	}
+
+  	.dropdown-item {
+  		text-align: center;
+  	}
+
+	nav #nav-buttons-inside {
+		margin: 0 auto;
+	}
+	.carousel img {
+		width: auto;
+		height: auto;
+	}
+	.carousel-caption {
+		bottom: 10%;
+	}
+}

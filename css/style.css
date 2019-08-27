@@ -3,10 +3,14 @@ body {
 	padding: 0;
 }
 
+.container {
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
 #logo-img {
 	width: 30px;
 	height: 30px;
-	border-radius: 5px;
+	border-radius: 50px;
 }
 
 #logo-img:hover {
@@ -56,6 +60,34 @@ footer a {
 	bottom: 0px;
 }
 
+/*SIGNUP.HTML CSS*/
+#signup-body {
+	
+}
+
+#signup-body .container {
+	background-color: #f5f5f5;
+}
+
+#signup-body footer {
+	background-color: #f5f5f5;
+}
+
+#signup-logo {
+	border-radius: 5px;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+#signup-body h2 {
+	text-align: center;
+}
+
+#container-signup img {
+	border-radius: 10px;
+}
+
+
+
 /* RESPONSIVE DESIGN WHEN SCREEN SIZE IS SMALLER THAN 880px */
 @media screen and (max-width: 770px) {
 	.container {
@@ -75,5 +107,11 @@ footer a {
 	}
 	.carousel-caption {
 		bottom: 10%;
+	}
+	
+	/*SIGNUP.HTML CSS*/
+	#container-signup img {
+		border-radius: 10px;
+		display: none;
 	}
 }

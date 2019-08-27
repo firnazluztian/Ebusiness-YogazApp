@@ -65,7 +65,7 @@
       <div class="container">
 
         <div class="py-5 text-center" id="profile-picture" >
-          <img class="d-block mx-auto mb-4" src="https://d2x5ku95bkycr3.cloudfront.net/App_Themes/Common/images/profile/0_200.png" id="signup-logo" alt="">
+          <a href="https://d2x5ku95bkycr3.cloudfront.net/App_Themes/Common/images/profile/0_200.png"><img class="d-block mx-auto mb-4" src="https://d2x5ku95bkycr3.cloudfront.net/App_Themes/Common/images/profile/0_200.png" id="signup-logo" alt=""></a>
           <h5>[first name] [last name]</h5>
           <p>[username]</p>
           <p>[email address]</p>
@@ -74,23 +74,32 @@
         <!-- TABS CONTAINER -->
         <ul class="nav nav-tabs" id="myTab" role="tablist">
           <li class="nav-item">
-            <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Classes</a>
+            <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">
+              Classes
+              <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSEdGBpMPXmI56eRlMncMrf4WZMj4slZYmOdetX9UpveY0n2AZPzA" height="20px" width="20px">
+            </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false">Schedules</a>
+            <a class="nav-link" id="schedule-tab" data-toggle="tab" href="#schedule" role="tab" aria-controls="contact" aria-selected="false">
+              Schedules
+              <img src="https://img.icons8.com/plasticine/2x/overtime.png" height="20px" width="20px">
+            </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" id="favorite-tab" data-toggle="tab" href="#favorite" role="tab" aria-controls="contact" aria-selected="false">Favorites</a>
+            <a class="nav-link" id="favorite-tab" data-toggle="tab" href="#favorite" role="tab" aria-controls="contact" aria-selected="false">
+              Favorites
+              <img src="https://cdn3.iconfinder.com/data/icons/cosmo-color-basic-1/40/favorite-512.png" height="20px" width="20px">
+            </a>
           </li>
         </ul>
         <div class="tab-content" id="myTabContent">
-          <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">classes taken
-          
-          </div>
-          <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">class schedule
+          <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab" style="background-color: lightgrey;">[classes taken]
 
           </div>
-          <div class="tab-pane fade" id="favorite" role="tabpanel" aria-labelledby="favorite-tab">favorite
+          <div class="tab-pane fade" id="schedule" role="tabpanel" aria-labelledby="schedule-tab" style="background-color: lightgreen;">[class schedule]
+
+          </div>
+          <div class="tab-pane fade" id="favorite" role="tabpanel" aria-labelledby="favorite-tab" style="background-color: lightblue;">[favorite]
 
           </div>
         </div>

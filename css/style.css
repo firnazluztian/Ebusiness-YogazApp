@@ -17,7 +17,6 @@ body {
 	border: 2px solid black;
 }
 
-
 /* NAVIGATION */
 nav {
 	text-align: center;
@@ -89,6 +88,8 @@ footer a {
 /*PROFILE PAGE CSS*/
 #profile .container {
 	margin-bottom: 20px;
+	border-radius: 5px;
+	background-color: white;
 	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
@@ -102,16 +103,22 @@ footer a {
 
 #profile-picture img{
 	height: 100%;
+	margin-top: -150px;
+}
+
+#profile-picture img{
+	height: 100%;
 	border-radius: 50px;
 }
 
 #profile-main {
-	margin-top: -120px;
+	margin-top: -80px;
 }
 
 .tab-pane {
-	border: 2px solid black;
-	border-radius: 5px;
+	border: 0px solid black;
+	border-bottom-left-radius: 5px;
+	border-bottom-right-radius: 5px;
 	height: 500px;
 	padding: 20px;
 }

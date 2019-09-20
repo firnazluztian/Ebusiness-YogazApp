@@ -1,0 +1,65 @@
+{
+
+  "user": [
+    {
+      "name": "user1",
+      "email": "user1@gmail.com",
+      "description": "hey im a user"
+    },
+    {
+      "name": "user2",
+      "email": "user2@gmail.com",
+      "description": "hey im a user"
+    }
+  ],
+
+  "trainer": [
+    {
+      "name": "trainer1",
+      "email": "trainer1@gmail.com",
+      "description": "howdy",
+      "image": "pic/trainer/p1.png"
+    },
+    {
+      "name": "trainer2",
+      "email": "trainer2@gmail.com",
+      "description": "howdy",
+      "image": "pic/trainer/p2.png"
+    },
+    {
+      "name": "trainer3",
+      "email": "trainer3@gmail.com",
+      "description": "howdy",
+      "image": "pic/trainer/p3.png"
+    },
+    {
+      "name": "trainer4",
+      "email": "trainer4@gmail.com",
+      "description": "howdy",
+      "image": "pic/trainer/p4.png"
+    }
+  ],
+  
+  "class": [
+    {
+      "name": "yoga 101",
+      "description": "this is an intro class about yoga",
+      "teacher": "trainer1",
+      "schedule": {
+        "date": "10/10/2019",
+        "time": "10.00 AM"
+      },
+      "availability": "closed"
+    },
+    {
+      "name": "yoga 501",
+      "description": "this is an advanced class about yoga",
+      "teacher": "trainer2",
+      "schedule": {
+        "date": "10/11/2019",
+        "time": "10.00 AM"
+      },
+      "availability": "open"
+    }
+  ]
+}

@@ -117,7 +117,7 @@ footer a {
 #profile-header {
 	height: 300px;
 	width: 100%;
-	background-image: url("http://wallpapere.org/wp-content/uploads/2012/02/black-and-white-city-night.png");
+	background-image: url("http://getwallpapers.com/wallpaper/full/e/a/c/90761.jpg");
 	background-position: center;
 	background-size: cover;
 }
@@ -125,11 +125,7 @@ footer a {
 #profile-picture img{
 	height: 100%;
 	margin-top: -150px;
-}
-
-#profile-picture img{
-	height: 100%;
-	border-radius: 50px;
+	border-radius: 500px;
 }
 
 #profile-main {

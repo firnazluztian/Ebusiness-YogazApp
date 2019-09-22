@@ -17,15 +17,34 @@ body {
 	border: 2px solid black;
 }
 
-/*HEADLINES */
 
 .headline1 {
 	font-size: 50px;
 	color: white;
 }
 
+/* Changed, Gradient top */
+.navbar-collapse {
+    background: transparent !important;
+    color: rgb(255, 255, 255) !important;
+}
 
-/* NAVIGATION */
+    /* Control the nav words color */
+    .navbar-collapse a:hover {
+        color: #00aaff !important;
+        background: transparent;
+        outline: 0
+    }
+
+    .navbar-collapse a {
+        transition: color 0.5s ease-in-out;
+    }
+/*-webkit-transition ;-moz-transition*/
+.top-nav {
+    padding: 0;
+    background: #000;
+}  
+
 nav {
 	text-align: center;
 	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
@@ -37,6 +56,9 @@ nav {
 	color: white;
 }
 
+.dropdown-menu{
+	background-color: rgba(0, 0, 0, 0.5);
+}
 
 nav p{
 	color: white;
@@ -64,6 +86,22 @@ nav p{
 	font-size: 40px;
 	color: #ff9200;
 	}
+
+/*trainers page*/
+
+.text-center {
+    margin: 2%;
+    padding-bottom: 2%;
+    float: left;
+}
+
+.card {
+    background-color: antiquewhite;
+}
+
+.col div ul li {
+    background-color: antiquewhite;
+}
 
 /* FOOTER */
 footer {
@@ -171,3 +209,4 @@ main #myTabContent {
 		display: none;
 	}
 }
+

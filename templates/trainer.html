@@ -90,7 +90,25 @@
 
       </div>
     </div>
-    
+     <table border = 1>
+         <thead>
+            <td>Trainer ID</td>
+            <td>Name</td>
+            <td>Last Name</td>
+            <td>Description</td>
+         </thead>
+
+         {% for row in rows %}
+            <tr>
+               <td>{{ row[0]}}</td>
+               <td>{{ row[1]}}</td>
+               <td> {{ row[2]}}</td>
+               <td> {{ row[3]}}</td>
+            </tr>
+         {% endfor %}
+      </table>    
+
+
     <!-- FOOTER -->
     <footer class="footer">
       <div class="footer-copyright text-center py-3">© 2019 Copyright:

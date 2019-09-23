@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
     <!-- OUR CSS -->
-    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" type="text/css" href="../static/css/style.css">
 
     <title>Yogaz | Class Schedule</title>
   </head>
@@ -18,8 +18,8 @@
     <!-- NAVIGATION BAR -->
     <nav class="navbar navbar-expand-md navbar-light">
       <a class="navbar-brand" href="index.html">
-        <img id="logo-img" src="pic/logo.PNG" class="d-inline-block align-top" alt="">
-        Yogaz
+        <img id="logo-img" src="../static/pic/logo.png" class="d-inline-block align-top" alt="">
+        <p>Yogaz</p>
       </a>
       <!-- dropdown button -->
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -62,6 +62,24 @@
 
     <!-- MAIN BODY -->
     <main"></main>
+          <table border = 1>
+         <thead>
+            <td>Class ID</td>
+            <td>Date and Time</td>
+            <td>Duration (min)</td>
+            <td>Description</td>
+         </thead>
+
+         {% for row in rows %}
+            <tr>
+               <td>{{ row[1]}}</td>
+               <td>{{ row[2]}}</td>
+               <td> {{ row[3]}}</td>
+               <td> {{ row[4]}}</td>
+            </tr>
+         {% endfor %}
+      </table>
+
     
     <!-- FOOTER -->
     <footer class="footer">

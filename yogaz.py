@@ -1,11 +1,14 @@
 from flask import Flask, flash, redirect, escape, request, render_template, send_from_directory, session, abort
 import sqlite3
 from flask import g
+from flask_login import LoginManager
 import os
 
 app = Flask(__name__)
-# login_manager = LoginManager()
-# login_manager.init_app(app)
+login_manager = LoginManager(app)
+login_manager.init_app(app)
+
+app.secret_key = b'a932ik29ok3r02jker02323'
 
 
 DATABASE = 'yogaz.db'
@@ -30,11 +33,18 @@ def close_connection(exception):
     if db is not None:
         db.close()
 
-# 
+# main page
 
 @app.route('/')
 def indexpage():
     return render_template('index.html')
+
+# login manager
+
+@login_manager.user_loader
+def load_user(user_id):
+    return User.get(user_id)
+
 
 
 # Routes to static content
@@ -65,7 +75,6 @@ def send_static(path):
 
 
 # Sub pages
-
 @app.route('/signup.html')
 def signup():
         return render_template('signup.html')
@@ -83,9 +92,6 @@ def result():
             return render_template("result.html", result = result)
    else:
 	    return render_template("index.html")
- 
-
-
 
 @app.route('/aboutUs.html')
 def aboutUs():
@@ -109,9 +115,31 @@ def contactUs():
 def indexPage():
         return render_template('index.html')
 
-@app.route('/profile.html')
+@app.route('/profile.html', methods=['GET', 'POST'])
 def profile():
-        return render_template('profile.html')
+	   if request.method == 'POST':
+           	result = request.form
+           	con = get_db()
+           	cur = con.cursor()
+           	cur.execute("SELECT * FROM user WHERE username = ? and password = ? limit 1;", (result['username'],result['password']))
+		userdata = cur.fetchall();
+		if not userdata:
+			flash('Authentication Error, please try again')
+			session['logged_in'] = False
+			return indexpage()
+		else: 
+			session['logged_in'] = True
+			userId = str(userdata[0][0])
+			cur.execute("SELECT classSchedule.datetime, classSchedule.description from classSchedule join booking on classSchedule.classScheduleId = booking.classScheduleId WHERE booking.userID = ?;", [userId])
+			classesdata = cur.fetchall()
+			session['userdata'] = userdata[0]
+			session['classesdata'] = classesdata
+          		return render_template('profile.html', userdata=userdata[0], classesdata=classesdata)
+	   else:
+		if session['logged_in']:
+			return render_template('profile.html', userdata=session['userdata'], classesdata=session['classesdata'])
+		else:
+			return indexpage()
 
 
 @app.route('/beginner.html')
@@ -122,7 +150,7 @@ def beginner():
 def trainer():
    con = get_db()
    cur = con.cursor()
-   cur.execute("select * from trainer;")
+   cur.execute("SELECT * FROM trainer;")
    rows = cur.fetchall();
    return render_template('trainer.html', rows = rows)
 
@@ -130,4 +158,13 @@ def trainer():
 def classType():
         return render_template('classType.html')
 
+@app.route('/logout')
+def logout():
+    # remove the username from the session if it's there
+    session.pop('userdata', None)
+    session['logged_in'] = False
+    return render_template('index.html')
 
+if __name__ == '__main__':
+    app.secret_key = os.urandom(12)
+    app.run(port=8888,debug=True)

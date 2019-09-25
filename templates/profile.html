@@ -64,11 +64,26 @@
     <main id="profile-main">
       <div class="container">
 
+        <!-- 
+        userdata[0]: userid
+        userdata[1]: firstname
+        userdata[2]: lastname
+        userdata[3]: username
+        userdata[4]: password
+        userdata[5]: email
+        userdata[6]: address
+        userdata[7]: address2
+        userdata[8]: country
+        userdata[9]: state 
+        userdata[10]: zip 
+        -->
+
         <div class="py-5 text-center" id="profile-picture" >
          <img class="d-block mx-auto mb-4" src="https://d2x5ku95bkycr3.cloudfront.net/App_Themes/Common/images/profile/0_200.png" id="signup-logo" alt="">
-          <h5>{{ userdata[1] }} {{ userdata[2] }} </h5>
-          <p>{{ userdata[3] }}</p>
-          <p>{{ userdata[5] }}</p>
+          <h5>Welcome {{ userdata[1] }} {{ userdata[2] }}</h5>
+          <p><strong>Username:</strong> {{ userdata[3] }}</p>
+          <p><strong>Email:</strong> {{ userdata[5] }}</p>
+          <p><strong>Address:</strong> {{ userdata[6] }}, {{ userdata[7] }}, {{ userdata[8] }}, {{ userdata[9] }}, {{ userdata[10] }}</p>
         </div>
 
         <!-- TABS CONTAINER -->
@@ -93,15 +108,21 @@
           </li>
         </ul>
         <div class="tab-content" id="myTabContent">
-          <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab" style="background-color: lightgrey;">[classes taken]
 
+          <!-- CLASSES PANEL -->
+          <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab" style="background-color: white;">
+            <!-- iterate the div -->
+            {% for class in classesdata %}
+            <div>
+              <strong>Classes taken: </strong> {{class[0]}}, {{class[1]}}
+            </div>
+            {% endfor %}
           </div>
-          <div class="tab-pane fade" id="schedule" role="tabpanel" aria-labelledby="schedule-tab" style="background-color: lightgreen;">[class schedule]
 
-          </div>
-          <div class="tab-pane fade" id="favorite" role="tabpanel" aria-labelledby="favorite-tab" style="background-color: lightblue;">[favorite]
+          <!-- SCHEDULE PANEL -->
+          <div class="tab-pane fade" id="schedule" role="tabpanel" aria-labelledby="schedule-tab" style="background-color: white;">[class schedule]
+          <button type="button" class="btn btn-success">Book another class</button>
 
-          </div>
         </div>
 
       </div>

@@ -10,12 +10,29 @@
 
     <!-- OUR CSS -->
     <link rel="stylesheet" type="text/css" href="../static/css/style.css">
-    <style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <title>Yogaz | Beginner</title>
+  </head>
+
+<style>
+
+/**************************************************/
+/*                   MM try IT                   ;*/
+/**************************************************/
+.container {
+
+}
+
+.container h1 {
+  text-align: center;
+}
+
 div.gallery {
   margin: 5px;
-  border: 2px solid #262E4D;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   float: left;
-  width: 180px;
+  width: 200px;
 }
 
 div.gallery:hover {
@@ -31,16 +48,26 @@ div.desc {
   padding: 15px;
   text-align: center;
 }
+
 /**************************************************/
 /*                   FOOTER                    ;*/
 /**************************************************/
 
+ .container-fluid{padding-right:15px;
+  padding-left:15px;
+  margin-right:auto;
+  margin-left:auto
+}
+
+
 #footer-section{
   position: relative;
   width: 100%;
-  background-color: #262e4d;
+  background-color: #d64e1c;
   padding: 15px 0;
+  color: white;
 }
+
 
 .footer-about{
   background-color:#262e4d !important;
@@ -57,7 +84,7 @@ div.desc {
 }
 
 .footer-logo img{
-  width: 90%;
+  width: 70%;
   max-width: 120px;
 }
 
@@ -201,23 +228,16 @@ div.desc {
     padding-right: 30px;
   }
 }
-
 /**************************************************/
 /*                 FOOTER END                  ;*/
 /**************************************************/
-
 </style>
-
-    <title>Yogaz | Beginner</title>
-  </head>
-
-
   <body>
     
     <!-- NAVIGATION BAR -->
     <nav class="navbar navbar-expand-md navbar-light">
       <a class="navbar-brand" href="index.html">
-        <img id="logo-img" src="../static/pic/logo.png" class="d-inline-block align-top" alt="">
+        <img id="logo-img" src="../static/pic/index/yogazlogo.png" class="d-inline-block align-top" alt="">
         <p>Yogaz</p>
       </a>
       <!-- dropdown button -->
@@ -261,14 +281,16 @@ div.desc {
 
     <!-- MAIN BODY -->
     <main>
-	<div class="container" >
+
+	<div class="container-fluid" style="margin-top: 10px;margin-bottom: 10px;box-shadow: none;">
+    <!-- <h1> Welcome to the Yogaz Family!</h1> -->
             <div class="row mx-0 content-center align-items-center w-200"> 
 
-                <div class="accordion" id="accordionExample">
-                    <div class="card">
+                <div class="accordion" id="accordionExample" style="width: 100%;">
+                    <div class="card" style="background-color: #b2dfdb; width: 100%;">
                       <div class="card-header" id="headingOne">
                         <h2 class="mb-0">
-                          <button style=background-color:#262E4D class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                          <button style="background-color:#262E4D" class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
                               Beginner
                           </button>
                         </h2>
@@ -355,7 +377,7 @@ div.desc {
                       </div>
                     </div>
 
-                    <div class="card">
+                    <div class="card" style="background-color: #f9fbe7;">
                       <div class="card-header" id="headingTwo">
                         <h2 class="mb-0">
                           <button style=background-color:#262E4D class="btn btn-primary collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
@@ -446,7 +468,7 @@ div.desc {
                       </div>
 
                     </div>
-                    <div class="card">
+                    <div class="card" style="background-color: #ef9a9a;">
                       <div class="card-header" id="headingThree">
                         <h2 class="mb-0">
                           <button style=background-color:#262E4D class="btn btn-primary collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
@@ -551,12 +573,7 @@ div.desc {
 	</main>
 </body>
     
-    <!-- FOOTER 
-    <footer class="footer">
-      <div class="footer-copyright text-center py-3">© 2019 Copyright:
-        <a href="#"> Yogaz.com</a>
-      </div>
-    </footer>   -->
+ 
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
@@ -572,60 +589,63 @@ div.desc {
     <!-- OUR JS -->
     <script src="js/script.js" type="text/javascript"></script>
 
-    <section id="footer-section" >
+
+   <!-- FOOTER -->
+
+  <section id="footer-section" >
   <div class="container-fluid">
     <div class="row">
       <div class="footer-logo v-center-tablet">
-        <img src="../static/pic/logo.png">
-      </div><!--
+        <img src="../static/pic/logofooter.png">
+      </div>
+      <!--
      --><div class="v-center-tablet footer-text">
         <div class="row row-eq-height-tablet">
           <div class="col-xs-7 col-sm-4 footer-navigation">
             <div class="footer-navigation-inside">
               <ul>
                                                                                                                                                                                                                                                                       
-                  <li><a href="http://www.crucycle.com/about">ABOUT CRU</a></li>
+                  <li><a href="aboutUs.html" style="color:white">ABOUT us</a></li>
                                   
-                  <li><a href="http://www.crucycle.com/faq">FAQ</a></li>
-                                  
-                  <li><a href="http://www.crucycle.com/termsandconditions">TERMS AND CONDITIONS</a></li>
+                  <li><a href="contactUs.html" style="color:white">ContactUs</a></li>
+
                               </ul>
             </div>
           </div>
           <div class="col-xs-6 col-sm-4 reserved-wrap">
             <div class="reserved">
-              <p>All Rights Reserved <br>&copy; CruCycle 2018.</p>
+              <p>All Rights Reserved <br>&copy; Yogaz 2019.</p>
             </div>
           </div>
           <div class="col-xs-5 col-sm-4 footer-info-wrap">
             <div class="footer-media">
-                              <a href="http://www.instagram.com/crucycle">
+                              <a href="http://www.instagram.com/yogaz" style="color:white">
                   <i class="fa fa-instagram" aria-hidden="true"></i>
                 </a>
               
-                              <a href="http://www.facebook.com/ridewiththepack">
+                              <a href="http://www.facebook.com/yogaz" style="color:white">
                   <i class="fa fa-facebook-square" aria-hidden="true"></i>
                 </a>
                           </div>
             <div class="footer-info">
-              <p>68 Duxton Road</p><p>Singapore, 089527</p>           </div>
+              <p>YOGAZ, Jarková 14</p>
+              <p>080 01 Prešov, Slovakia</p> </div>
+            
             <div class="footer-info">
-              <a href="http://www.crucycle.com/parkingcontact#map-section"><p>Parking</p></a>
-            </div>
-            <div class="footer-info">
-              <p><a href="mailto:info@crucycle.com">info@crucycle.com</p>
-              <p><a href="tel:+65 6509 8880">+65 6509 8880</p>
+              <p><a href="mailto:info@yogaz.com" style="color:white">info@yogaz.com</p>
+              <p><a href="tel:+65 6509 8880" style="color:white">+65 6509 8880</p>
             </div>
           </div>
           <div class="col-xs-12 mobile-reserved">
-            <div class="reserved">
-              <p>All Rights Reserved <br>&copy; CruCycle 2018.</p>
-            </div>
+<div class="footer-copyright text-center py-3">© 2019 Copyright:
+        <a href="#"> Yogaz.com</a>
+      </div>
           </div>
         </div>
       </div>
     </div>
   </div>
 </section>
+
   </body>
 </html>

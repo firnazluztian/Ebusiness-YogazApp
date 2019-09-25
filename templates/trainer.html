@@ -80,17 +80,61 @@
     <header></header>
 
     <!-- MAIN BODY -->
-    <main>
-      
-    </main>
+    <main></main>
 
     <!-- DISPLAY TRAINER FROM JSON -->
-    <div class="container">
+    <!-- <div class="container">
+      <h1 style="text-align: center;">json trainer data</h1>
       <div class="row" id="jsonList_trainer">
+      </div>
+    </div> -->
+
+    <!-- <table border = 1>
+         <thead>
+            <td>Trainer ID</td>
+            <td>Name</td>
+            <td>Last Name</td>
+            <td>Description</td>
+         </thead>
+
+         {% for row in rows %}
+            <tr>
+               <td>{{ row[0]}}</td>
+               <td>{{ row[1]}}</td>
+               <td> {{ row[2]}}</td>
+               <td> {{ row[3]}}</td>
+            </tr>
+         {% endfor %}
+      </table>   -->  
+
+    <div class="container">
+      <div class="row" style="padding: 10px;">
+
+        <!-- 
+        row 0 = user id
+        row 1 = first name
+        row 2 = last name
+        row 3 = description 
+        -->
+
+        <!-- iterate by the userID table -->
+        {% for row in rows %}
+        <div class="col" style="margin: 5px;">
+          <div class="card" style="width: 100%;">
+            <img src="../static/pic/trainer/p1.png" class="card-img-top" alt="...">
+            <div class="card-body">
+              <p class="card-text">
+                <strong>Name</strong>: {{ row[1]}}, {{ row[2]}} <br>
+                <strong>Description</strong>:<br> {{ row[3]}}
+              </p>
+            </div>
+          </div>
+        </div>
+        {% endfor %}
 
       </div>
     </div>
-    
+
     <!-- FOOTER -->
     <footer class="footer">
       <div class="footer-copyright text-center py-3">© 2019 Copyright:

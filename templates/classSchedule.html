@@ -18,7 +18,7 @@
     <!-- NAVIGATION BAR -->
     <nav class="navbar navbar-expand-md navbar-light">
       <a class="navbar-brand" href="index.html">
-        <img id="logo-img" src="../static/pic/logo.png" class="d-inline-block align-top" alt="">
+        <img id="logo-img" src="../static/pic/index/yogazlogo.png" class="d-inline-block align-top" alt="">
         <p>Yogaz</p>
       </a>
       <!-- dropdown button -->
@@ -89,10 +89,10 @@
     -->
 
     <!-- CLASS SCHEDULE -->
-    <div class="container">
+    <div class="container" style="margin-top: 10px; border: none; box-shadow: none;">
       <!-- iterate all available lists  -->
       {% for row in rows %}
-      <div class="card mb-3" style="margin-bottom: 10px; padding: 5px;">
+      <div class="card mb-3" style="padding: 5px; background-color: white;">
         <img src="pic/pic2.jpg" class="card-img-top" alt="...">
         <div class="card-body">
           <h5 class="card-title"><strong>Class name</strong>: {{ row[4]}}</h5>

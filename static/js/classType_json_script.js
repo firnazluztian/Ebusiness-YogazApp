@@ -2,7 +2,7 @@ $(document).ready(function() {
     var output = "";
     var element = "";
     var displayResources = $("#jsonList_classtype");
-    displayResources.text("Your server is not working!");
+    displayResources.text("404 error<br>Your server is not working!");
 
     $.ajax({
       type: "GET",

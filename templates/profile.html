@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
     <!-- OUR CSS -->
-    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" type="text/css" href="../static/css/style.css">
 
     <title>Yogaz | Profile</title>
   </head>
@@ -18,8 +18,8 @@
     <!-- NAVIGATION BAR -->
     <nav class="navbar navbar-expand-md navbar-light">
       <a class="navbar-brand" href="index.html">
-        <img id="logo-img" src="pic/logo.PNG" class="d-inline-block align-top" alt="">
-        Yogaz
+        <img id="logo-img" src="../static/pic/logo.png" class="d-inline-block align-top" alt="">
+        <p>Yogaz</p>
       </a>
       <!-- dropdown button -->
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -66,9 +66,9 @@
 
         <div class="py-5 text-center" id="profile-picture" >
          <img class="d-block mx-auto mb-4" src="https://d2x5ku95bkycr3.cloudfront.net/App_Themes/Common/images/profile/0_200.png" id="signup-logo" alt="">
-          <h5>[first name] [last name]</h5>
-          <p>[username]</p>
-          <p>[email address]</p>
+          <h5>{{ userdata[1] }} {{ userdata[2] }} </h5>
+          <p>{{ userdata[3] }}</p>
+          <p>{{ userdata[5] }}</p>
         </div>
 
         <!-- TABS CONTAINER -->

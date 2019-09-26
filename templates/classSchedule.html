@@ -62,23 +62,7 @@
 
     <!-- MAIN BODY -->
     <main></main>
-    <!-- <table border = 1>
-       <thead>
-          <td>Class ID</td>
-          <td>Date and Time</td>
-          <td>Duration (min)</td>
-          <td>Description</td>
-       </thead>
-
-       {% for row in rows %}
-          <tr>
-             <td>{{ row[1]}}</td>
-             <td>{{ row[2]}}</td>
-             <td> {{ row[3]}}</td>
-             <td> {{ row[4]}}</td>
-          </tr>
-       {% endfor %}
-    </table> -->
+   
 
     <!-- 
     row 0: item id
@@ -92,6 +76,7 @@
     <div class="container" style="margin-top: 10px; border: none; box-shadow: none;">
       <!-- iterate all available lists  -->
       {% for row in rows %}
+       <form action="/bookclass" method="post">
       <div class="card mb-3" style="padding: 5px; background-color: white;">
         <img src="pic/pic2.jpg" class="card-img-top" alt="...">
         <div class="card-body">
@@ -99,9 +84,11 @@
           <p class="card-text"><strong>Date and time</strong>: {{ row[2]}}</p>
           <p class="card-text"><strong>Duration</strong>: {{ row[3]}} minutes</p>
           <p class="card-text"><strong>Class id</strong>: {{ row[1]}}</p>
-          <button type="button" class="btn btn-outline-success" onclick="alert('class booked!')">Book</button>
+          <button type="submit" class="btn btn-outline-success" value="{{row[0]}}" >Book</button>
+	  <input type="hidden" name="classId" value="{{row[0]}}">
         </div>
       </div>
+      </form>
       {% endfor %}
     </div>
     

@@ -19,9 +19,9 @@ body {
 
 
 .headline1 {
-	font-size: 60px;
+	font-size: 100%;
 	color: white;
-	width: 500px;
+	width: 100%;
 }
 
 /* Changed, Gradient top */

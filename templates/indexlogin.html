@@ -12,9 +12,9 @@
 
     <link rel="stylesheet" type="text/css" href="../static/css/style.css">
     <title>Yogaz | Home</title>
-    
-    <link href="https://fonts.googleapis.com/css?family=Comfortaa&display=swap" rel="stylesheet"> 
-    <link href="https://fonts.googleapis.com/css?family=Anton&display=swap" rel="stylesheet"> 
+
+    <link href="https://fonts.googleapis.com/css?family=Comfortaa&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Anton&display=swap" rel="stylesheet">
     <style type="text/css">
 
       .headline1 {
@@ -211,7 +211,7 @@
     </style>
   </head>
   <body>
-    
+
     <!-- NAVIGATION BAR -->
     <nav class="navbar navbar-expand-md navbar-light">
       <a class="navbar-brand" href="index.html">
@@ -254,7 +254,13 @@
         <!-- SIGNUP AND LOGIN -->
         <div class="form-inline" id="nav-buttons">
           <div id="nav-buttons-inside">
-            <a href="profile.html"><button class="btn btn-outline-light my-2 my-sm-0">Hi, {{ result['firstName'] }}</button></a>
+            <a href="profile.html"><button class="btn btn-outline-light my-2 my-sm-0">Hi, {{ result[1] }}</button></a>
+          </div>
+        </div>
+
+        <div class="form-inline" id="nav-buttons">
+          <div id="nav-buttons-inside">
+            <a href="/logout"><button class="btn btn-outline-light my-2 my-sm-0">logout</button></a>
           </div>
         </div>
 
@@ -266,11 +272,11 @@
       <div class="modal-dialog modal-login">
         <div class="modal-content">
           <form action="profile.html" method="post">
-            <div class="modal-header">        
+            <div class="modal-header">
               <h4 class="modal-title">Login</h4>
               <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
             </div>
-            <div class="modal-body">        
+            <div class="modal-body">
               <div class="form-group">
                 <label>Username</label>
                 <input type="text" class="form-control" required="required" name="username">
@@ -309,7 +315,7 @@
               <div class="carousel-caption">
                 <h5 class="headline1">DON'T WISH FOR A GOOD BODY.</h5>
                 <p class="headline1 orangetext">WORK FOR IT.</p>
-                <a href="signup.html"><button type="button" class="btn btn-outline-light">BOOK CLASSES</button></a>
+                <a href="classSchedule.html"><button type="button" class="btn btn-outline-light">BOOK CLASSES</button></a>
                 <a href="aboutUs.html"><button type="button" class="btn btn-outline-light">FIRST TIMER?</button></a>
               </div>
             </div>
@@ -344,7 +350,7 @@
 
     <!-- MAIN BODY -->
     <main"></main>
-    
+
     <!-- FOOTER -->
  <!-- FOOTER -->
 
@@ -360,9 +366,9 @@
           <div class="col-xs-7 col-sm-4 footer-navigation">
             <div class="footer-navigation-inside">
               <ul>
-                                                                                                                                                                                                                                                                      
+
                   <li><a href="aboutUs.html" style="color:white">ABOUT us</a></li>
-                                  
+
                   <li><a href="contactUs.html" style="color:white">ContactUs</a></li>
 
                               </ul>
@@ -378,7 +384,7 @@
                               <a href="http://www.instagram.com/yogaz" style="color:white">
                   <i class="fa fa-instagram" aria-hidden="true"></i>
                 </a>
-              
+
                               <a href="http://www.facebook.com/yogaz" style="color:white">
                   <i class="fa fa-facebook-square" aria-hidden="true"></i>
                 </a>
@@ -386,7 +392,7 @@
             <div class="footer-info">
               <p>YOGAZ, Jarková 14</p>
               <p>080 01 Prešov, Slovakia</p> </div>
-            
+
             <div class="footer-info">
               <p><a href="mailto:info@yogaz.com" style="color:white">info@yogaz.com</p>
               <p><a href="tel:+65 6509 8880" style="color:white">+65 6509 8880</p>
@@ -401,7 +407,7 @@
       </div>
     </div>
   </div>
-</section>  
+</section>
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->

@@ -11,6 +11,7 @@ Install project environments for each OS (Windows/Mac)
 Ensure Python is installed
 Ensure Python flask is installed
 Ensure docker is installed
+Ensure sqlite3 is installed
 
 3)
 Clone the project from GitHub: 

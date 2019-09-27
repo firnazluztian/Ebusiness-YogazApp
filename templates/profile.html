@@ -14,11 +14,11 @@
     <title>Yogaz | Profile</title>
   </head>
   <body id="profile">
-    
+
     <!-- NAVIGATION BAR -->
     <nav class="navbar navbar-expand-md navbar-light">
       <a class="navbar-brand" href="index.html">
-        <img id="logo-img" src="../static/pic/logo.png" class="d-inline-block align-top" alt="">
+        <img id="logo-img" src="../static/pic/index/yogazlogo.png" class="d-inline-block align-top" alt="">
         <p>Yogaz</p>
       </a>
       <!-- dropdown button -->
@@ -55,6 +55,17 @@
           </li>
         </ul>
       </div>
+              <div class="form-inline" id="nav-buttons">
+          <div id="nav-buttons-inside">
+            <a href="profile.html"><button class="btn btn-outline-light my-2 my-sm-0">Hi, {{ userdata[1] }}</button></a>
+          </div>
+        </div>
+
+        <div class="form-inline" id="nav-buttons">
+          <div id="nav-buttons-inside">
+            <a href="/logout"><button class="btn btn-outline-light my-2 my-sm-0">logout</button></a>
+          </div>
+        </div>
     </nav>
 
     <!-- HEADER PIC/TEXT -->
@@ -64,14 +75,34 @@
     <main id="profile-main">
       <div class="container">
 
+        <!--
+        userdata[0]: userid
+        userdata[1]: firstname
+        userdata[2]: lastname
+        userdata[3]: username
+        userdata[4]: password
+        userdata[5]: email
+        userdata[6]: address
+        userdata[7]: address2
+        userdata[8]: country
+        userdata[9]: state
+        userdata[10]: zip
+        -->
+
         <div class="py-5 text-center" id="profile-picture" >
          <img class="d-block mx-auto mb-4" src="https://d2x5ku95bkycr3.cloudfront.net/App_Themes/Common/images/profile/0_200.png" id="signup-logo" alt="">
-          <h5>{{ userdata[1] }} {{ userdata[2] }} </h5>
-          <p>{{ userdata[3] }}</p>
-          <p>{{ userdata[5] }}</p>
+          <h5>Welcome {{ userdata[1] }} {{ userdata[2] }}</h5>
+          <p><strong>Username:</strong> {{ userdata[3] }}</p>
+          <p><strong>Email:</strong> {{ userdata[5] }}</p>
+          <p><strong>Address:</strong> {{ userdata[6] }}, {{ userdata[7] }}, {{ userdata[8] }}, {{ userdata[9] }}, {{ userdata[10] }}</p>
         </div>
+      </div>
 
-        <!-- TABS CONTAINER -->
+    </main>
+
+    <!-- TABS CONTAINER -->
+        <div class="container">
+
         <ul class="nav nav-tabs" id="myTab" role="tablist">
           <li class="nav-item">
             <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">
@@ -86,33 +117,35 @@
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" id="favorite-tab" data-toggle="tab" href="#favorite" role="tab" aria-controls="contact" aria-selected="false">
-              Favorites
-              <img src="https://cdn3.iconfinder.com/data/icons/cosmo-color-basic-1/40/favorite-512.png" height="20px" width="20px">
-            </a>
+
           </li>
         </ul>
+
         <div class="tab-content" id="myTabContent">
-          <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab" style="background-color: lightgrey;">[classes taken]
-
+          <!-- CLASSES PANEL -->
+          <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab" style="background-color: white;">
+            <!-- iterate the div -->
+            {% for class in classesdata %}
+            <div>
+              <strong>Classes taken: </strong> {{class[0]}}, {{class[1]}}
+            </div>
+            {% endfor %}
           </div>
-          <div class="tab-pane fade" id="schedule" role="tabpanel" aria-labelledby="schedule-tab" style="background-color: lightgreen;">[class schedule]
 
-          </div>
-          <div class="tab-pane fade" id="favorite" role="tabpanel" aria-labelledby="favorite-tab" style="background-color: lightblue;">[favorite]
-
+          <!-- SCHEDULE PANEL -->
+          <div class="tab-pane fade" id="schedule" role="tabpanel" aria-labelledby="schedule-tab" style="background-color: white;">[class schedule]
+          <button type="button" class="btn btn-success">Book another class</button>
           </div>
         </div>
 
-      </div>
-    </main>
-    
+      </div> <!-- TABS CONTAINER END-->
+
     <!-- FOOTER -->
     <footer class="footer">
       <div class="footer-copyright text-center py-3">© 2019 Copyright:
         <a href="#"> Yogaz.com</a>
       </div>
-    </footer>   
+    </footer>
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->

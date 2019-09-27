@@ -1,11 +1,13 @@
 from flask import Flask, flash, redirect, escape, request, render_template, send_from_directory, session, abort
 import sqlite3
 from flask import g
+from flask_login import LoginManager
 import os
 
 app = Flask(__name__)
-# login_manager = LoginManager()
-# login_manager.init_app(app)
+login_manager = LoginManager(app)
+login_manager.init_app(app)
+app.secret_key = os.urandom(12)
 
 
 DATABASE = 'yogaz.db'
@@ -24,21 +26,51 @@ def query_db(query, args=(), one=False):
     cur.close()
     return (rv[0] if rv else None) if one else rv
 
+
+
 @app.teardown_appcontext
 def close_connection(exception):
     db = getattr(g, '_database', None)
     if db is not None:
         db.close()
 
-# 
+#Session Control
 
+def NoActiveSession():
+	return not session or not session['logged_in']
+
+#Getting User Info
+def GetUserInfo(username,password):
+        con = get_db()
+        cur = con.cursor()
+        cur.execute("SELECT * FROM user WHERE username = ? and password = ? limit 1;", (username,password))
+	userdata = cur.fetchall()
+	return userdata
+
+def GetBookingInfo(userId):
+	con = get_db()
+        cur = con.cursor()
+	cur.execute("SELECT classSchedule.datetime, classSchedule.description from classSchedule join booking on classSchedule.classScheduleId = booking.classScheduleId WHERE booking.userID = ?;", [userId])
+	bookingdata = cur.fetchall()
+	return bookingdata
+
+# main page always GET
 @app.route('/')
 def indexpage():
-    return render_template('index.html')
+    if NoActiveSession():
+	return render_template('index.html')
+    else:
+	return render_template('indexlogin.html', result=session['userdata'])
+
+
+# login manager
+@login_manager.user_loader
+def load_user(user_id):
+    return User.get(user_id)
+
 
 
 # Routes to static content
-
 @app.route('/css/<path:path>')
 def send_css(path):
         return send_from_directory('static/css', path)
@@ -65,7 +97,6 @@ def send_static(path):
 
 
 # Sub pages
-
 @app.route('/signup.html')
 def signup():
         return render_template('signup.html')
@@ -83,9 +114,6 @@ def result():
             return render_template("result.html", result = result)
    else:
 	    return render_template("index.html")
- 
-
-
 
 @app.route('/aboutUs.html')
 def aboutUs():
@@ -107,11 +135,35 @@ def contactUs():
 
 @app.route('/index.html')
 def indexPage():
-        return render_template('index.html')
+        return indexpage()
 
-@app.route('/profile.html')
+@app.route('/profile.html', methods=['GET', 'POST'])
 def profile():
-        return render_template('profile.html')
+	   if request.method == 'POST':
+           	result = request.form
+		if 'username' in result.keys(): # Login through index page
+			userdata = GetUserInfo(result['username'],result['password'])
+			if not userdata:
+				flash('Authentication Error, please try again')
+				session['logged_in'] = False
+				return indexpage()
+			else: 
+				session['logged_in'] = True
+				userId = str(userdata[0][0])
+				session['userdata'] = userdata[0]
+				#session['classesdata'] = GetBookingInfo(userId)
+          			# return render_template('profile.html', userdata=userdata[0], classesdata=classesdata)
+		else:
+			userId = session['userdata'][0]
+		session['classesdata'] = GetBookingInfo(userId)	
+		return render_template('profile.html', userdata=session['userdata'], classesdata=session['classesdata'])
+			
+			
+	   else:
+		if session['logged_in']:
+			return render_template('profile.html', userdata=session['userdata'], classesdata=session['classesdata'])
+		else:
+			return indexpage()
 
 
 @app.route('/beginner.html')
@@ -122,7 +174,7 @@ def beginner():
 def trainer():
    con = get_db()
    cur = con.cursor()
-   cur.execute("select * from trainer;")
+   cur.execute("SELECT * FROM trainer;")
    rows = cur.fetchall();
    return render_template('trainer.html', rows = rows)
 
@@ -130,4 +182,29 @@ def trainer():
 def classType():
         return render_template('classType.html')
 
+@app.route('/bookclass',  methods=['GET', 'POST'])
+def bookClass():
+	if NoActiveSession():
+		return indexpage()
+	else:
+	    if request.method == 'POST':
+            	result = request.form
+            	con = get_db()
+            	cur = con.cursor()
+            	cur.execute("INSERT INTO booking (classScheduleId, userID) VALUES (?, ?)", (result['classId'],str(session['userdata'][0])))
+            	con.commit()
+		cur.execute("SELECT classSchedule.datetime, classSchedule.description from classSchedule join booking on classSchedule.classScheduleId = booking.classScheduleId WHERE booking.userID = ?;", [str(session['userdata'][0])])
+		classesdata = cur.fetchall()
+		session['classesdata'] = classesdata
+            return profile()
 
+@app.route('/logout')
+def logout():
+    # remove the username from the session if it's there
+    session.pop('userdata', None)
+    session['logged_in'] = False
+    return render_template('index.html')
+
+if __name__ == '__main__':
+    app.secret_key = os.urandom(12)
+    app.run(port=8888,debug=True)

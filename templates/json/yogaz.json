@@ -64,11 +64,11 @@
     }
 
   ],
-  
+
   "class": [
     {
       "name": "Basics",
-      "image": "../static/pic/pic0.jpg",
+      "image": "../static/pic/classtype/type1.jpg",
       "description": "Trying out yoga for the first time or simply enjoy practicing the fundamentals of yoga? Go back to basics with foundational postures to condition and awaken the body. Get ready to sweat it out as you relearn the key poses during out Basics Yoga Class! Work on building strength and stability in your Warrior Poses, and fire up the front and back body with some basic Core work.",
       "teacher": "Firnaz",
       "schedule": {
@@ -79,7 +79,7 @@
     },
     {
       "name": "Core",
-      "image": "../static/pic/pic0.jpg",
+      "image": "../static/pic/classtype/type2.jpg",
       "description": "This is unlike a regular yoga class that promotes general strength and flexibility - The class focuses on sets of static postures and repetitive movements that are aimed at strengthening the core muscles.Postures and exercises in the class are basic and do not require prior yoga experience, but physical intensity of the class is moderate to high. Core strength is an important key to mastering advance poses like arm balances and inversions!",
       "teacher": "trainer2",
       "schedule": {
@@ -90,7 +90,7 @@
     },
     {
       "name": "Hot Yoga",
-      "image": "../static/pic/pic0.jpg",
+      "image": "../static/pic/classtype/type3.jpg",
       "description": "A fix set of 26 postures and 2 Breathing exercises that systematically work every part of the body, giving your internal organs,veins, ligaments, and every muscles what they need to maintain optimum health and maximum function. The room will be heated to a temperature of around 40°C",
       "teacher": "trainer2",
       "schedule": {
@@ -101,7 +101,7 @@
     },
     {
       "name": "Hot Stretch",
-      "image": "../static/pic/pic0.jpg",
+      "image": "../static/pic/classtype/type4.jpg",
       "description": "This is a great class to work on your flexibility! Gentle movements and longer holds help relieve tense and tight muscles, pain, and stuck lactic acid in the body. The room is slightly heated to a temperature of around 35°C, helping your muscles to warm up and enhancing your flexibility. You will also get the additional benefits of detoxification from a good sweat!",
       "teacher": "trainer2",
       "schedule": {
@@ -112,7 +112,7 @@
     },
     {
       "name": "Prenatal",
-      "image": "../static/pic/pic0.jpg",
+      "image": "../static/pic/classtype/type5.jpg",
       "description": "A class for all mother-to-be, to have a comfortable and enjoyable pregnancy through the techniques of breathing exercises, physical movements and postures to strengthen and relax the body, to ease the mind and to connect with their baby in a safe and supportive environment. Please check with your doctor before starting any exercise program.",
       "teacher": "trainer2",
       "schedule": {

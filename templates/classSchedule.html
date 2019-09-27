@@ -84,9 +84,7 @@
           <p class="card-text"><strong>Date and time</strong>: {{ row[2]}}</p>
           <p class="card-text"><strong>Duration</strong>: {{ row[3]}} minutes</p>
           <p class="card-text"><strong>Class id</strong>: {{ row[1]}}</p>
-
-          <a href="#myModal" class="trigger-btn" data-toggle="modal"><button class="btn btn-outline-primary my-2 my-sm-0" type="submit" class="btn btn-outline-success" value="{{row[0]}}" >Book</button></a>
-	  <input type="hidden" name="classId" value="{{row[0]}}">
+          <a href="#myModal" class="trigger-btn" data-toggle="modal"><button class="btn btn-outline-primary my-2 my-sm-0" type="submit" class="btn btn-outline-success" value="{{row[0]}}">Book</button></a>
         </div>
       </div>
 
@@ -110,11 +108,6 @@
         </div>
       </div>
     </div>
-
-          <button type="submit" class="btn btn-outline-success" value="{{row[0]}}" >Book</button>
-	  <input type="hidden" name="classId" value="{{row[0]}}">
-        </div>
-      </div>
 
       </form>
       {% endfor %}

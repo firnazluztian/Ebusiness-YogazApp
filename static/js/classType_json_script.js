@@ -10,12 +10,12 @@ $(document).ready(function() {
       success: function(result) {
         console.log(result);
         output = "";
-        
+
         element =  result.class;
         for (var i in element) {
           output += "<div class='' id='classtype_box'>";
           output += "<div class='card' style='width: 100%;'>";
-          
+
           output += "<img src='" + element[i].image + "' class='card-img-top' alt='...' style='width:100%; text-align:center; margin-bottom: 10px'>";
           output += "<div class=''>";
           output += "<h5 class='card-title'>Class name: " + element[i].name + "</h5>"
@@ -23,7 +23,7 @@ $(document).ready(function() {
           output += "<p>Class Description:<br>" + element[i].description + "</p>";
           output += "<p>Availablity: " + element[i].availability + "</p>";
           output += "<hr>"
-          
+
           output += "</div>"; // close card-body class
           output += "</div>"; // close card class
           output += "</div>"; // close col class
@@ -32,5 +32,4 @@ $(document).ready(function() {
         displayResources.html(output);
       }
     });
-    
 });

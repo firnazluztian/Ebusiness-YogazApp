@@ -10,6 +10,22 @@
 
     <!-- OUR CSS -->
     <link rel="stylesheet" type="text/css" href="../static/css/style.css">
+    <style type="text/css">
+      th{
+        width: 400px;
+        text-align: center;
+        border-color: white;
+      }
+
+      tbody{
+        text-align: center;
+        border-color: white;
+      }
+
+      tr{
+        height: 50px;
+      }
+    </style>
 
     <title>Yogaz | Profile</title>
   </head>
@@ -125,12 +141,22 @@
           <!-- CLASSES PANEL -->
           <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab" style="background-color: white;">
             <!-- iterate the div -->
-            {% for class in classesdata %}
-            <div>
-              <strong>Classes taken: </strong> {{class[0]}}, {{class[1]}}
-            </div>
-            {% endfor %}
-          </div>
+            <table border="1" frame="void" border-collapse="separate" border-spacing="0px 10px">
+              <thead>
+                  <th>Time</th>
+                  <th>Class Name</th>
+              </thead>
+              <tbody>
+                  {% for class in classesdata %}
+                      <tr>
+                          <td>{{ class[0] }}</td>
+                          <td>{{ class[1] }}</td>
+                      </tr>
+                  {% endfor %}
+              </tbody>
+          </table>
+
+
 
           <!-- SCHEDULE PANEL -->
           <div class="tab-pane fade" id="schedule" role="tabpanel" aria-labelledby="schedule-tab" style="background-color: white;">[class schedule]

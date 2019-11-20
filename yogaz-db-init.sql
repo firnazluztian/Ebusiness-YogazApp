@@ -44,10 +44,6 @@ INSERT INTO booking (classScheduleId, userID) VALUES (3, 6);
 INSERT INTO booking (classScheduleId, userID) VALUES (1, 7);
 INSERT INTO booking (classScheduleId, userID) VALUES (2, 8);
 INSERT INTO booking (classScheduleId, userID) VALUES (3, 9);
-
-
-
-
 INSERT INTO booking (classScheduleId, userID) VALUES (1, 10);
 INSERT INTO booking (classScheduleId, userID) VALUES (2, 10);
 INSERT INTO booking (classScheduleId, userID) VALUES (3, 10);
